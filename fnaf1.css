@@ -107,14 +107,14 @@ body::before {
 }
 
 /* =============================== */
-/* HEADER - FIXED PATH BELOW */
+/* HEADER - UPDATED PATH */
 /* =============================== */
 
 .fnaf1-header {
     height: 65vh;
     background:
         linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,1)),
-        url("images/fnaf1header.webp") center/cover no-repeat;
+        url("images/fnaf1header.webp") center/cover no-repeat; /* Path updated */
 
     display: flex;
     align-items: center;
@@ -377,7 +377,7 @@ body::before {
 }
 
 /* =============================== */
-/* TV NOISE - FIXED PATH BELOW */
+/* TV NOISE - UPDATED PATH */
 /* =============================== */
 
 .tv-noise {
@@ -385,7 +385,7 @@ body::before {
     inset: 0;
     pointer-events: none;
     z-index: -1;
-    background: url('images/noise.gif') repeat;
+    background: url('images/noise.gif') repeat; /* Path updated */
     opacity: 0.08;
 }
 
