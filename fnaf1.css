@@ -107,14 +107,14 @@ body::before {
 }
 
 /* =============================== */
-/* HEADER */
+/* HEADER - FIXED PATH BELOW */
 /* =============================== */
 
 .fnaf1-header {
     height: 65vh;
     background:
         linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,1)),
-        url("../images/fnaf1header.webp") center/cover no-repeat;
+        url("images/fnaf1header.webp") center/cover no-repeat;
 
     display: flex;
     align-items: center;
@@ -287,7 +287,7 @@ body::before {
 }
 
 /* =============================== */
-/* ROLES (MATCH FNAF 3 STRUCTURE BUT FNAF 1 STYLE) */
+/* ROLES */
 /* =============================== */
 
 .roles-section {
@@ -328,8 +328,6 @@ body::before {
     letter-spacing: 8px;
 }
 
-/* FNAF1 STYLE FRAME AROUND ROLE BLOCK */
-
 .role-desc {
     padding: 30px;
     background: rgba(158,200,255,0.05);
@@ -356,42 +354,30 @@ body::before {
 }
 
 /* =============================== */
-/* CLEAN FNAF 1 PLAY BUTTON (FINAL) */
+/* PLAY BUTTON */
 /* =============================== */
 
 .play-btn {
     display: inline-block;
-
     font-size: 2.6rem;
     letter-spacing: 12px;
     text-decoration: none;
     color: #C8D7F1;
-
     padding: 14px 55px;
-
     background: rgba(158,200,255,0.03);
     border: 1px solid rgba(158,200,255,0.6);
-
-    /* VERY subtle static glow */
     box-shadow: 0 0 6px rgba(158,200,255,0.25);
-
-    transition: 
-        letter-spacing 0.25s ease,
-        background 0.25s ease,
-        box-shadow 0.25s ease;
+    transition: 0.25s ease;
 }
 
-/* hover = FNAF menu feel */
 .play-btn:hover {
     letter-spacing: 18px;
     background: rgba(158,200,255,0.08);
-
-    /* slightly stronger but NOT explosive */
     box-shadow: 0 0 10px rgba(158,200,255,0.4);
 }
 
 /* =============================== */
-/* TV NOISE */
+/* TV NOISE - FIXED PATH BELOW */
 /* =============================== */
 
 .tv-noise {
@@ -399,7 +385,7 @@ body::before {
     inset: 0;
     pointer-events: none;
     z-index: -1;
-    background: url('../images/noise.gif') repeat;
+    background: url('images/noise.gif') repeat;
     opacity: 0.08;
 }
 
@@ -409,15 +395,13 @@ body::before {
 
 .section-title {
     position: relative;
-    width: 100vw;          /* full viewport width */
+    width: 100vw;
     left: 50%;
     transform: translateX(-50%);
-    
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 15px;
-
     margin: 80px 0;
 }
 
@@ -427,45 +411,13 @@ body::before {
     margin: 0;
 }
 
-.section-title h2 {
-    font-family: 'Consolas', monospace;
-    text-transform: uppercase;
-    letter-spacing: 12px;
-    color: #C8D7F1;
-
-    text-shadow:
-        0 0 6px #4A86FF,
-        0 0 18px #4A86FF,
-        0 0 35px rgba(74,134,255,0.6);
-}
-
-/* glowing lines */
-
 .section-title .line {
     flex: 1;
     height: 1px;
     background: #9EC8FF;
-
-    box-shadow:
-        0 0 6px #9EC8FF,
-        0 0 15px #9EC8FF,
-        0 0 25px rgba(158,200,255,0.8);
+    box-shadow: 0 0 6px #9EC8FF;
 }
-
-/* PLAY specific */
 
 .play-title {
     margin: 40px auto 70px auto;
-}
-
-.play-btn {
-    font-size: 2.6rem;
-    letter-spacing: 14px;
-    color: #C8D7F1;
-    text-decoration: none;
-    transition: 0.3s ease;
-}
-
-.play-btn:hover {
-    color: #9EC8FF;
 }
