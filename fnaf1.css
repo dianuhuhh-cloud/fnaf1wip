@@ -107,7 +107,7 @@ body::before {
 }
 
 /* =============================== */
-/* HEADER - PATH FIXED FOR GITHUB */
+/* HEADER - PATH FIXED */
 /* =============================== */
 
 .fnaf1-header {
@@ -383,19 +383,17 @@ body::before {
     transition: 
         letter-spacing 0.25s ease,
         background 0.25s ease,
-        box-shadow 0.25s ease,
-        color 0.3s ease;
+        box-shadow 0.25s ease;
 }
 
 .play-btn:hover {
     letter-spacing: 18px;
     background: rgba(158,200,255,0.08);
     box-shadow: 0 0 10px rgba(158,200,255,0.4);
-    color: #9EC8FF;
 }
 
 /* =============================== */
-/* TV NOISE - PATH FIXED FOR GITHUB */
+/* TV NOISE - PATH FIXED */
 /* =============================== */
 
 .tv-noise {
