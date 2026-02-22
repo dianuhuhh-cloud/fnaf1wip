@@ -21,32 +21,30 @@
 <section class="fnaf1-content">
 
     <div class="intro-box">
-        <h2>WELCOME TO FREDDY FAZBEAR’S PIZZA</h2>
+        <h2>WELCOME TO FREDDY FAZBEAR’S PIZZERIA</h2>
     </div>
 
     <div class="grid">
         <div class="description">
             <h3>ABOUT THE GAME</h3>
             <p>
-Work the night shift at Freddy Fazbear’s Pizza.  
-Watch cameras, manage doors, and conserve power until 6 AM.  
-
-The animatronics roam freely at night.  
-They don’t like being watched.  
-
-Survive five nights.
+You're an employee at the newly established Freddy Fazbear's Pizzeria. 
+The animatronics move dangerously at night. 
+Use cameras, doors, and lights with limited power to survive five nights. 
+Each night gets harder. They don't like being watched, stay alert and plan carefully.
             </p>
         </div>
 
         <div class="video-preview">
             <video autoplay muted loop playsinline>
-                <source src="videos/fnaf1footage.mp4" type="video/mp4">
+                <source src="../videos/fnaf1footage.mp4" type="video/mp4">
             </video>
         </div>
     </div>
 
 </section>
 
+<!-- CHARACTERS SECTION -->
 <section class="characters-section">
 
     <div class="section-title">
@@ -61,11 +59,11 @@ Survive five nights.
 
         <div class="character-card">
             <h3 id="char-name">FREDDY</h3>
-            <img id="char-image" src="characters/freddyfazbear.webp" alt="Freddy">
+            <img id="char-image" src="../characters/freddyfazbear.webp" alt="Freddy">
 
             <div class="character-info">
                 <p id="char-desc">
-                    The lead animatronic.
+                    Only moves when not being stared at in the monitor. Attacks from the right door and when the power runs out to 0%.
                 </p>
 
                 <a id="char-link"
@@ -88,26 +86,26 @@ Survive five nights.
 const characters = [
     {
         name: "FREDDY",
-        image: "characters/freddyfazbear.webp",
-        desc: "The lead animatronic..",
+        image: "../characters/freddyfazbear.webp",
+        desc: "Only moves when not being stared at in the monitor. Attacks from the right door and when the power runs out to 0%.",
         link: "https://fnaf-coop.fandom.com/wiki/Freddy_Fazbear"
     },
     {
         name: "BONNIE",
-        image: "characters/bonnie.webp",
-        desc: "Often the first to move..",
+        image: "../characters/bonnie.webp",
+        desc: "Most active animatronic. Attacks from the left door. Can move to any room on the left side instantly.",
         link: "#"
     },
     {
         name: "CHICA",
-        image: "characters/chica.webp",
-        desc: "Lurks near the kitchen and right hallway.",
+        image: "../characters/chica.webp",
+        desc: "Moves in a set loop on the right side. Spends time in the kitchen (audio-only). Attacks from the right door.",
         link: "#"
     },
     {
         name: "FOXY",
-        image: "characters/foxy.webp",
-        desc: "Hides in Pirate Cove. Moves fast if ignored.",
+        image: "../characters/foxy.webp",
+        desc: "Aggression builds based on how often he's monitored. Runs down the West Hall and drains your power if he hits the left door.",
         link: "#"
     }
 ];
@@ -130,13 +128,28 @@ document.querySelector(".arrow.left").addEventListener("click", () => {
 });
 
 function updateCharacter() {
-    nameEl.textContent = characters[current].name;
-    imgEl.src = characters[current].image;
-    descEl.textContent = characters[current].desc;
-    linkEl.href = characters[current].link;
+    imgEl.classList.add("fade-out");
+
+    setTimeout(() => {
+        nameEl.textContent = characters[current].name;
+        imgEl.src = characters[current].image;
+        descEl.textContent = characters[current].desc;
+        linkEl.href = characters[current].link;
+
+        imgEl.classList.remove("fade-out");
+        imgEl.classList.add("fade-in");
+
+        setTimeout(() => {
+            imgEl.classList.remove("fade-in");
+        }, 350);
+
+    }, 200);
 }
+
 </script>
 
+
+<!-- ROLES SECTION -->
 
 <section class="roles-section">
 
@@ -146,90 +159,94 @@ function updateCharacter() {
     <span class="line"></span>
 </div>
 
+    <!-- 1. NIGHTGUARD -->
     <div class="role-block">
         <div class="role-text">
             <div class="role-header">
-                <img src="images/nightguard.webp" class="role-icon">
+                <img src="../images/nightguard.webp" class="role-icon">
                 <h3>NIGHTGUARD</h3>
             </div>
 
             <div class="role-desc">
                 <p>
-                    Monitor security cameras, manage power usage,
-                    and survive until 6 AM while the animatronics roam.
+                    Monitor security cameras, manage limited power usage, and strategically 
+                    defend your office while surviving until 6 AM as the animatronics roam the halls.
                 </p>
             </div>
         </div>
 
         <div class="role-video">
             <video autoplay muted loop playsinline>
-                <source src="videos/fnaf1Nightguard.mp4" type="video/mp4">
+                <source src="../videos/fnaf1Nightguard.mp4" type="video/mp4">
             </video>
         </div>
     </div>
 
+    <!-- 2. JANITOR -->
     <div class="role-block reverse">
         <div class="role-text">
             <div class="role-header">
-                <img src="images/janitor.webp" class="role-icon">
+                <img src="../images/janitor.webp" class="role-icon">
                 <h3>JANITOR</h3>
             </div>
 
             <div class="role-desc">
                 <p>
-                    Maintain hallways and backstage areas
-                    while strange sounds echo through the building.
+                    The janitor maintains the hallways of the pizzeria by cleaning up the messes that the kids left 
+                    behind while strange sounds echo through the building. 
                 </p>
             </div>
         </div>
 
         <div class="role-video">
             <video autoplay muted loop playsinline>
-                <source src="videos/fnaf1Janitor.mp4" type="video/mp4">
+                <source src="../videos/fnaf1Janitor.mp4" type="video/mp4">
             </video>
         </div>
     </div>
 
+    <!-- 3. ENGINEER -->
     <div class="role-block">
         <div class="role-text">
             <div class="role-header">
-                <img src="images/engineer.webp" class="role-icon">
+                <img src="../images/engineer.webp" class="role-icon">
                 <h3>ENGINEER</h3>
             </div>
 
             <div class="role-desc">
                 <p>
-                    Restore failing systems and respond
-                    to unexpected technical malfunctions.
+                    Restore failing systems and respond to unexpected technical malfunctions 
+                    to keep the pizzeria operational throughout the night, all while staying alert to the subtle signs of trouble lurking in the halls.
                 </p>
             </div>
         </div>
 
         <div class="role-video">
             <video autoplay muted loop playsinline>
-                <source src="videos/fnaf1Engineer.mp4" type="video/mp4">
+                <source src="../videos/fnaf1Engineer.mp4" type="video/mp4">
             </video>
         </div>
     </div>
 
+    <!-- 4. POLICEMAN -->
     <div class="role-block reverse">
         <div class="role-text">
             <div class="role-header">
-                <img src="images/policeman.webp" class="role-icon">
+                <img src="../images/policeman.webp" class="role-icon">
                 <h3>POLICEMAN</h3>
             </div>
 
             <div class="role-desc">
                 <p>
-                    Investigate suspicious activity reports
-                    and patrol the premises during late hours.
+                    The policeman is an externally hired entity by Freddy Fazbear's investigating the disappearances
+                     of the missing children that happened that one night while assisting the night guard during his duty.
                 </p>
             </div>
         </div>
 
         <div class="role-video">
             <video autoplay muted loop playsinline>
-                <source src="videos/fnaf1Policeman.mp4" type="video/mp4">
+                <source src="../videos/fnaf1Policeman.mp4" type="video/mp4">
             </video>
         </div>
     </div>
