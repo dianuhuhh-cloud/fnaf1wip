@@ -454,13 +454,6 @@ body::before {
 /* ANIMATRONIC IMAGE FADE */
 
 #char-image {
-    transition: opacity 0.35s ease;
-}
-
-#char-image.fade-out {
-    opacity: 0;
-}
-
-#char-image.fade-in {
+    transition: opacity 0.25s ease;
     opacity: 1;
 }
