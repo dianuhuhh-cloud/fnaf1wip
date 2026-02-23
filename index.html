@@ -126,8 +126,8 @@ document.querySelector(".arrow.left").addEventListener("click", () => {
     updateCharacter();
 });
 
-function updateCharacter() {
-    imgEl.classList.add("fade-out");
+    function updateCharacter() {
+    imgEl.style.opacity = "0";
 
     setTimeout(() => {
         nameEl.textContent = characters[current].name;
@@ -135,15 +135,10 @@ function updateCharacter() {
         descEl.textContent = characters[current].desc;
         linkEl.href = characters[current].link;
 
-        imgEl.classList.remove("fade-out");
-        imgEl.classList.add("fade-in");
-
-        setTimeout(() => {
-            imgEl.classList.remove("fade-in");
-        }, 350);
-
-    }, 200);
+        imgEl.style.opacity = "1";
+    }, 150);
 }
+
 </script>
 
 
@@ -259,3 +254,4 @@ function updateCharacter() {
 
 </body>
 </html>
+
